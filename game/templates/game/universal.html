@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>{{ game_name }}</title>
+{% endblock %}
+</head>
+<body>
+{% block content %}
+<h1>Количество бросков : {{ count }}</h1>
+<h2>Результат игры</h2>
+<ol>
+    {% for i in result_game %}
+    <li>{{ i }}</li>
+    {% endfor%}
+
+</ol>
+{% endblock %}
+<br>
+<br>
+<br>
+{% block back %}
+<a href="{% url 'chose_game' %}"> К выбору игры </a>
+{% endblock %}
+
+
+</body>
+</html>

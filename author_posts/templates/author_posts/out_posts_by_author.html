@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{%block title %}
+<title>POSTS by {{ author.full_name }}</title>
+{% endblock%}
+
+{% block content %}
+<ol>
+    {% for post in posts_author %}
+    {% if post.status_publication == True %}
+    <li><a href="{% url 'out_post' post.pk %}">{{ post.heading }} </a></li>
+    {% else %}
+    <li>{{ post.heading }}</li>
+    {% endif %}
+    {% endfor %}
+</ol>
+{% endblock %}

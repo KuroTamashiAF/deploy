@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{%block title %}
+<title>!!!!</title>
+{% endblock%}
+
+</head>
+<body>
+{% block articleinfo %}
+<p>Дата публикации поста : {{ post.date_publication }}</p>
+<p>Категория поста : {{ post.category }}</p>
+<p>Количество просмотров : {{ number_views }}</p>
+<p>Статус публикации : {{ post.status_publication }}</p>
+{% endblock %}
+
+{% block content %}
+<h1>Текст поста</h1><br>
+{{ post.content }}
+{% endblock %}
+
+{% block comments %}
+<br>
+<P>Комментарии к посту </P>
+<ol>
+    {% for comment in comments %}
+    <li>Текст комментария {{ comment.text }}
+        Дата публикации комментария {{ comment.date_publication }}
+        Автор комментария {{ comment.author.first_name }}
+    </li>
+
+    {% endfor %}
+    {% endblock %}
+</ol>
+{% block add_comments %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Отправить">
+</form>
+{% endblock %}
+
+</body>
+</html>
