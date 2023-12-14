@@ -21,6 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
+# SECRET_KEY = 'django-insecure-1sh%c1f25%-gti%_-v3+v2+u%gsg(hw4t4p%(u76lo-o#d!4f!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -42,8 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'heads_tails',
     'game',
-    'author_posts',
-
+    # 'author_posts',
 
 ]
 
@@ -95,6 +95,12 @@ DATABASES = {
         }
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
